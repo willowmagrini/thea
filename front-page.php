@@ -13,7 +13,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );
 
 ?>
 	
-	<div id="primary" style="background-image:url('<?php echo $imagem[0]; ?>');" class="col-sm-9">
+	<div id="primary" style="background-image:url('<?php echo $imagem[0]; ?>');" class="col-sm-10">
 		
 	</div><!-- #primary -->
 

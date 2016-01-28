@@ -961,7 +961,7 @@ tbody.collapse.in{display:table-row-group}
 .navbar-right{float:right !important;margin-right:-15px}
 .navbar-right ~ .navbar-right{margin-right:0}
 }
-.navbar-default{background-color:transparent;border:none;margin-top: 8vh;}
+.navbar-default{background-color:transparent;border:none;margin-top: 15vh;}
 .navbar-default .navbar-brand{color:#777}
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#5e5e5e;background-color:transparent}
 .navbar-default .navbar-text{color:#777}
@@ -1535,10 +1535,7 @@ p{
 
 /*sidebar*/
 #header-image img{
-	padding: 14px 12%;
-
-	max-width: 100%;
-	max-height: 100%;
+	width:80%;
 	position:absolute;
 	top:0;
 	bottom:0;
@@ -1553,11 +1550,16 @@ p{
 	display:block;
 	float:left;
 	height:105px;
-	width: 120%;
+	width: 100%;
 	
 	
 }
-
+svg .preto{
+	fill:black;
+}
+.svglogo{
+    width: 102%;
+}
 .r-triangle-top {
 	border-style:solid;
 	border-width: 6vw;

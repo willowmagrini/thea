@@ -129,6 +129,11 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 					echo "rgba(".$cor.",1)";
 				?>;
 		}
+		svg
+		{fill:<?php
+					echo "rgba(".$cor.",1)";
+				?>;
+		}
 		#lista_titulos li {
 		    color: 	<?php
 						echo "rgba(".$cor.",1)";
@@ -145,7 +150,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 					?>;
 		}
 		#faixa{
-			background-color:<?php echo "rgba(".$cor.",1)";?>
+/*			background-color:<?php echo "rgba(".$cor.",1)";?>*/
 		}
 		#social a i{
 			color:

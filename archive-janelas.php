@@ -14,7 +14,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );
 $obj = get_post_type_object( 'janelas' ); 
 ?>
 
-	<div id="primary"  class="col-sm-9">
+	<div id="primary"  class="col-sm-10">
 		<div id="margem"></div>
 		<div id="content" class="site-content" role="main">
 			<div class="clearfix"></div>
