@@ -52,5 +52,18 @@
 		
 	}
 	
+	add_action( 'wp_ajax_revela_foto', 'revela_foto' );
+	add_action( 'wp_ajax_nopriv_revela_foto', 'revela_foto' );
+	
+	
+	
+	
+	//////////////////////////////foto
+	function revela_foto(){
+		$end=$_POST['endereco'];
+		echo '<img src='.$end.'>';
+		wp_die();
+		
+	}
 	add_action( 'wp_ajax_filtra_cat', 'filtra_cat' );
 	add_action( 'wp_ajax_nopriv_filtra_cat', 'filtra_cat' );

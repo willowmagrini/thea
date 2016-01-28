@@ -151,5 +151,32 @@ jQuery(document).ready(function($) {
 		
 
 		})
-	
+		$( '#modal-conteudo img' ).fitVids();
+		$('.gallery-item a').on('click',function(e){
+			e.preventDefault();
+			$('#modal-conteudo #html').html('');
+			
+			var data = {
+				'action': 'revela_foto',
+			};
+		
+			data.endereco = $(this).attr('href');
+				$('#fundo-modal').attr('modal-estado','ativo');
+				$('#modal-conteudo').attr('modal-estado','ativo');
+
+
+			console.log(data);
+			$.post(odin_main.ajaxurl, data, function(response) {
+				$('#modal-conteudo #html').html(response);
+			});
+			$(' #botao-fechar, #fundo-modal').click(function(f) {
+				console.log('passou')
+				f.preventDefault();
+				$('#fundo-modal').attr('modal-estado','inativo');
+				$('#modal-conteudo').attr('modal-estado','inativo');
+
+
+			});
+		});
+			
 });

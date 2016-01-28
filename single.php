@@ -36,6 +36,15 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );
 			?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
+	<div id="fundo-modal">	</div>
+	<div id="modal-conteudo">
+		
+		<a href="#">
+			<div id="botao-fechar">x</div>
+		</a>
+		<div class="animated fadeIn" id="html">
+		</div>		
+	</div>
 
 <?php
 get_footer();

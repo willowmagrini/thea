@@ -138,6 +138,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 					echo "rgba(".$cor.",1)";
 				?>;
 		}
+		
 		#lista_titulos li {
 		    color: 	<?php
 						echo "rgba(".$cor.",1)";
@@ -162,7 +163,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 					echo "rgba(".$cor.",1)";			
 				?>
 		}
-		#social a:hover i, #paginacao{
+		#social a:hover i, #paginacao, #botao-fechar{
 			color: 	<?php
 						echo "rgba(".$cor.",0.3)";
 					?>;
