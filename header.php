@@ -163,7 +163,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 						echo "rgba(".$cor.",0.3)";
 					?>;
 		}
-		#primary{
+		#main{
 			background-image:url('<?php echo $imagem[0]; ?>');
 		}
 		@media screen and (max-width: 767px){

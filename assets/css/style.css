@@ -839,7 +839,7 @@ tbody.collapse.in{display:table-row-group}
 .input-group-btn>.btn:hover,.input-group-btn>input[type="submit"]:hover,.input-group-btn>input[type="reset"]:hover,.input-group-btn>button:hover,.input-group-btn>.btn:focus,.input-group-btn>input[type="submit"]:focus,.input-group-btn>input[type="reset"]:focus,.input-group-btn>button:focus,.input-group-btn>.btn:active,.input-group-btn>input[type="submit"]:active,.input-group-btn>input[type="reset"]:active,.input-group-btn>button:active{z-index:2}
 .input-group-btn:first-child>.btn,.input-group-btn:first-child>input[type="submit"],.input-group-btn:first-child>input[type="reset"],.input-group-btn:first-child>button,.input-group-btn:first-child>.btn-group{margin-right:-1px}
 .input-group-btn:last-child>.btn,.input-group-btn:last-child>input[type="submit"],.input-group-btn:last-child>input[type="reset"],.input-group-btn:last-child>button,.input-group-btn:last-child>.btn-group{margin-left:-1px}
-.nav{margin-bottom:0;padding-left:0;list-style:none; font-size:1.3em; text-transform:uppercase;background-color:white}
+.nav{margin-bottom:0;padding-left:0;list-style:none; font-size:1.3em; text-transform:uppercase;background-color:transparent}
 .nav:before,.nav:after{content:" ";display:table}
 .nav:after{clear:both}
 .nav>li{position:relative;display:block}
@@ -961,7 +961,7 @@ tbody.collapse.in{display:table-row-group}
 .navbar-right{float:right !important;margin-right:-15px}
 .navbar-right ~ .navbar-right{margin-right:0}
 }
-.navbar-default{background-color:#f8f8f8;border:none;margin-top: 8vh;}
+.navbar-default{background-color:transparent;border:none;margin-top: 8vh;}
 .navbar-default .navbar-brand{color:#777}
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#5e5e5e;background-color:transparent}
 .navbar-default .navbar-text{color:#777}
@@ -1624,6 +1624,7 @@ p{
 #secondary{
 	z-index:3;
 	height: 646px;
+	background-color:rgba(255, 255, 255, 0.9);
 	
 	
 }
@@ -1666,7 +1667,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 .nav>li{
 	padding-bottom: 1vh;
 	z-index: 100;
-	background: white;
+	background: transparent;
 }
 .nav li a{
 	font-size:1.6vw;

@@ -13,7 +13,7 @@
 		$odin_general_opts = get_option( 'config' );
 		$corex = $odin_general_opts['cor'];
 		$cor = hex2rgb($corex);?>
-<div id="secondary" class="widget-area col-sm-3 " role="complementary">
+<div id="secondary" class="widget-area col-sm-2 " role="complementary">
 	<header  id="header" role="banner">
 			
 				<?php
