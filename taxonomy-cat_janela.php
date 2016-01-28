@@ -121,7 +121,7 @@ $obj = get_post_type_object( 'janelas' );
 get_footer();
 ?>
 <script>
-	document.getElementById('jardins').value='<?php
+	document.getElementById('janelas').value='<?php
 	echo get_queried_object()->term_id;
 	?>'
 </script>

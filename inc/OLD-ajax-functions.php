@@ -27,6 +27,7 @@
 				$janelas_query->the_post();
 				$titu =  get_the_title();
 				$desc = get_the_content();
+				if ($args['post_type']=='janelas'){
 					$ajax_response['html'] .= '
 					<li class="janela col-sm-4" id="cliente-'.$post->ID.'">
 						<a href="'.get_the_permalink().'">
@@ -39,7 +40,49 @@
 						$ajax_response['html'] .='<div class="clearfix"></div>';
 					}
 				$count++;
+				}
+				else if ($args['post_type']=='jardins'){
+					$ajax_response['html'] .= '
+					<li class="jardim col-sm-2" id="id-'.$post->ID.'">
+						<a href="'.get_the_permalink().'">
+								'.get_the_post_thumbnail($post->ID, "thumbnail").'
+						</a>
+					</li>
+					';
+					if ($count % 6 == 0){
+						$ajax_response['html'] .='<div class="clearfix"></div>';
+					}
+				}
 				
+				else if ($args['post_type']=='viagens'){
+					$ajax_response['html'] .= '
+					<li class="viagem col-sm-12 " id="cliente-'.$post->ID.'">
+						<a href="'.get_the_permalink().'">
+							<div class=" thumb_viagem">
+						
+								'.get_the_post_thumbnail($post->ID, "viagens").'
+							</div>
+							<div class="viagem_div">
+								<h4>'.$titu.'</h4>
+								<p>'.get_the_excerpt().'</p>
+							</div>
+						</a>
+					</li>';
+					
+						
+				}
+				else if($args['post_type']=='projetos'){
+					$titu =  get_the_title();
+					global $post; 
+					$slug = $post->post_name;
+					$desc = get_the_content();
+					$lista_titulos .= "<li ><a href=' ".get_the_permalink()."'><h4 class='".$slug."'>".get_the_title()."</h4></a></li>";
+					$lista_img .="<li class=' projeto col-sm-4 ' id='cliente-".$post->ID."'><a href='".get_the_permalink()."'>".get_the_post_thumbnail($post->ID, 'thumbnail',array('id'	=> $slug, 'class'=>'attachment-post-thumbnail')
+					)."</a></li>";
+					$ajax_response['html']=	$lista_titulos;
+					$ajax_response['html1']=$lista_img;
+					
+				}
 				
 			}//while
 		} else {

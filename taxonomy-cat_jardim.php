@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Meu Jardim
+ * Template Name: Janelas
  *
  * 
  *
@@ -20,10 +20,7 @@ $obj = get_post_type_object( 'jardins' );
 			<div class="clearfix"></div>
 
 			<h1 id="titulo-cpt" class="entry-header">
-				<?php 
-				echo  $obj->labels->singular_name;
-					// echo $obj->name;
-				?>
+				<?php echo $obj->name;?>
 			</h1>
 			<div class="col-sm-1"></div>
 
@@ -69,8 +66,8 @@ $obj = get_post_type_object( 'jardins' );
 
 			$args = array(
 				'post_type' => 'jardins',
-				'posts_per_page' => 9999,
-				'paged'  =>  false,
+				'posts_per_page' => 999,
+				'paged'  =>  true,
 				'tax_query' => array(
 						array(
 							'taxonomy' => 'cat_jardim',
@@ -81,29 +78,30 @@ $obj = get_post_type_object( 'jardins' );
 
 
 			);
-			$jardim_query = new WP_Query( $args );
+			$janelas_query = new WP_Query( $args );
 			// The Loop
 			
-			if ( $jardim_query->have_posts() ) {
+			if ( $janelas_query->have_posts() ) {
 				echo '<ul id="conteudo-filtro" class="sem-margem col-sm-10"> ';
 				$count=1;
-				while ( $jardim_query->have_posts() ) {
-					$jardim_query->the_post();
+				while ( $janelas_query->have_posts() ) {
+					$janelas_query->the_post();
 					$titu =  get_the_title();
 					$desc = get_the_content();
 				
 					?>
 					
-					<li class='jardim col-sm-2 ' id="id-<?php echo $post->ID;?>">
+					<li class='janela col-sm-4 ' id="cliente-<?php echo $post->ID;?>">
 						<a href="<?php the_permalink();?>">
 								
 									<?php 
-								the_post_thumbnail('thumbnail');
+								the_post_thumbnail('janelas');
+									echo '<h4>'.$titu.'</h4>';
 									?>
 						</a>
 					</li>
 					<?php
-					if ($count % 6 == 0){
+					if ($count % 3 == 0){
 						?>
 						<div class="clearfix"></div>
 						<?php

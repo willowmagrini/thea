@@ -58,7 +58,7 @@ $obj = get_post_type_object( 'projetos' );
 					function wp_dropdown_categories_attribute( $output ){
 					    return preg_replace( 
 					        '^' . preg_quote( '<select ' ) . '^', 
-					        '<select data-taxonomy="cat_viagem" ', 
+					        '<select data-taxonomy="cat_projeto" ', 
 					        $output 
 					    );
 					}

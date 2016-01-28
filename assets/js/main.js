@@ -9,12 +9,18 @@ jQuery(document).ready(function($) {
     	
 	}
 	$('.seletor-categoria').change(function(e){
+		if ($(this).children('option:selected').attr('value') == -1){
+				id=$(this).attr('id');
+			window.location.replace('/'+id);
+			
+		}
 	   	var meta = {};
 	   	var data = {'action': 'filtra_cat'};
        	meta['post_type'] = $(this).attr('id');
 		meta['term']=$( "select option:selected" ).attr('value');
 		meta['taxonomy']=$(this ).attr('data-taxonomy');
 		data.meta = meta;
+		console.log(data);
 	   	$.ajax({
 			type: 'POST',
 	  	 	url: odin_main.ajaxurl,
@@ -23,13 +29,9 @@ jQuery(document).ready(function($) {
 		   	complete: function(response){
 				var obj = $.parseJSON(response.responseText);
 				console.log(obj.html)
-				if 	(meta['post_type'] =='projetos'){
-					$('#lista_titulos').html(obj.html);
-					$('#lista_img').html(obj.html1);
-				}
-				else{
+				
 					$('#conteudo-filtro').html(obj.html);
-				}
+				
 	   		},
 	   	});
 	});
