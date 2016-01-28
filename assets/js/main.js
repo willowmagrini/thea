@@ -133,6 +133,9 @@ jQuery(document).ready(function($) {
 		};
 	}
 
-	
+	$('.menu-item-has-children').hover(
+	  function () {
+	    $(this).children('.dropdown-menu').addClass('ativo');
+	  });
 	
 });
