@@ -59,7 +59,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 </head>
 <style>
 		
-		.nav li a, a, #conteudo-filtro  a:hover{
+		.nav li a, a{
 			transition: color 0.7s ease;
 			color:
 			<?php
@@ -111,10 +111,13 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 			border-width:4px;
 		}
 		a:hover .attachment-post-thumbnail, a:hover .attachment-thumbnail, a:hover .attachment-janelas, a:hover .attachment-viagens  	{
-			border-color: 	<?php
-						echo "rgba(".$cor.",1)";
-					?>;
-			border-style: solid;
+			opacity:0.5;
+			transition:  0.7s ease;
+			
+			/*border-color: 	<?php
+									echo "rgba(".$cor.",1)";
+								?>;
+						border-style: solid;*/
 		}
 	
 		a h4, a h1{
@@ -126,9 +129,9 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 			padding:3px 2px;
 		}
 		a:hover h4, .borda, .search-results article a:hover h1, input
-		{border-color:<?php
-					echo "rgba(".$cor.",1)";
-				?>;
+		{/*border-color:<?php
+							echo "rgba(".$cor.",1)";
+						?>;*/
 		}
 		svg
 		{fill:<?php

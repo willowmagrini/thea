@@ -914,7 +914,7 @@ tbody.collapse.in{display:table-row-group}
 .navbar-brand>img{display:block}
 @media (min-width: 768px){.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}
 }
-.navbar-toggle{position:relative;float:right;margin-right:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
+.navbar-toggle{position:relative;float:left;margin-left:15px;padding:9px 10px;margin-top:8px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
 .navbar-toggle:focus{outline:0}
 .navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
 .navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
@@ -1836,6 +1836,54 @@ p{
 	font-weight:bolder;
 	
 }
+.gallery.gallery-columns-3 .gallery-item {
+    margin: 10px 2%;
+    width: 100%;
+}
+.owl-carousel .owl-wrapper-outer {
+    overflow: hidden;
+    position: relative;
+    width: 100%!important;
+    margin: 0 auto;
+
+}
+#seta-esq{
+	width: 51px;
+	height: 56px;
+	background-image: url('../images/seta-esq.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+    left: -44px;
+    top: 31%;
+  
+}
+#seta-dir{
+	width: 51px;
+	height: 56px;
+	background-image: url('../images/seta-dir.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+    right: -42px;
+    top: 31%;
+
+	
+}
+.owl-theme .owl-controls .owl-buttons div {
+    color: #FFF;
+    display: inline-block;
+    zoom: 1;
+    margin: 5px;
+     padding: 0; 
+    font-size: 12px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: transparent;
+    filter: Alpha(Opacity=50);
+    opacity: 0.5;
+}
 
 @media (min-height: 580px){
 	
@@ -1968,7 +2016,7 @@ p{
 		width:100%;
 	}
 	#main-navigation{
-		position: absolute;
+		position: relative;
 		right: 0;
 		z-index:9999;
 	}
@@ -1978,12 +2026,16 @@ p{
 	}
 	
 	.table-responsive{width:100%;margin-bottom:15px;overflow-y:hidden;-ms-overflow-style:-ms-autohiding-scrollbar;border:1px solid #ddd}
-.table-responsive>.table,.page-content .table-responsive>table,.entry-content .table-responsive>table{margin-bottom:0}
-.table-responsive>.table>thead>tr>th,.page-content .table-responsive>table>thead>tr>th,.entry-content .table-responsive>table>thead>tr>th,.table-responsive>.table>thead>tr>td,.page-content .table-responsive>table>thead>tr>td,.entry-content .table-responsive>table>thead>tr>td,.table-responsive>.table>tbody>tr>th,.page-content .table-responsive>table>tbody>tr>th,.entry-content .table-responsive>table>tbody>tr>th,.table-responsive>.table>tbody>tr>td,.page-content .table-responsive>table>tbody>tr>td,.entry-content .table-responsive>table>tbody>tr>td,.table-responsive>.table>tfoot>tr>th,.page-content .table-responsive>table>tfoot>tr>th,.entry-content .table-responsive>table>tfoot>tr>th,.table-responsive>.table>tfoot>tr>td,.page-content .table-responsive>table>tfoot>tr>td,.entry-content .table-responsive>table>tfoot>tr>td{white-space:nowrap}
-.table-responsive>.table-bordered{border:0}
-.table-responsive>.table-bordered>thead>tr>th:first-child,.table-responsive>.table-bordered>thead>tr>td:first-child,.table-responsive>.table-bordered>tbody>tr>th:first-child,.table-responsive>.table-bordered>tbody>tr>td:first-child,.table-responsive>.table-bordered>tfoot>tr>th:first-child,.table-responsive>.table-bordered>tfoot>tr>td:first-child{border-left:0}
-.table-responsive>.table-bordered>thead>tr>th:last-child,.table-responsive>.table-bordered>thead>tr>td:last-child,.table-responsive>.table-bordered>tbody>tr>th:last-child,.table-responsive>.table-bordered>tbody>tr>td:last-child,.table-responsive>.table-bordered>tfoot>tr>th:last-child,.table-responsive>.table-bordered>tfoot>tr>td:last-child{border-right:0}
-.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>td{border-bottom:0}
+	.table-responsive>.table,.page-content .table-responsive>table,.entry-content .table-responsive>table{margin-bottom:0}
+	.table-responsive>.table>thead>tr>th,.page-content .table-responsive>table>thead>tr>th,.entry-content .table-responsive>table>thead>tr>th,.table-responsive>.table>thead>tr>td,.page-content .table-responsive>table>thead>tr>td,.entry-content .table-responsive>table>thead>tr>td,.table-responsive>.table>tbody>tr>th,.page-content .table-responsive>table>tbody>tr>th,.entry-content .table-responsive>table>tbody>tr>th,.table-responsive>.table>tbody>tr>td,.page-content .table-responsive>table>tbody>tr>td,.entry-content .table-responsive>table>tbody>tr>td,.table-responsive>.table>tfoot>tr>th,.page-content .table-responsive>table>tfoot>tr>th,.entry-content .table-responsive>table>tfoot>tr>th,.table-responsive>.table>tfoot>tr>td,.page-content .table-responsive>table>tfoot>tr>td,.entry-content .table-responsive>table>tfoot>tr>td{white-space:nowrap}
+	.table-responsive>.table-bordered{border:0}
+	.table-responsive>.table-bordered>thead>tr>th:first-child,.table-responsive>.table-bordered>thead>tr>td:first-child,.table-responsive>.table-bordered>tbody>tr>th:first-child,.table-responsive>.table-bordered>tbody>tr>td:first-child,.table-responsive>.table-bordered>tfoot>tr>th:first-child,.table-responsive>.table-bordered>tfoot>tr>td:first-child{border-left:0}
+	.table-responsive>.table-bordered>thead>tr>th:last-child,.table-responsive>.table-bordered>thead>tr>td:last-child,.table-responsive>.table-bordered>tbody>tr>th:last-child,.table-responsive>.table-bordered>tbody>tr>td:last-child,.table-responsive>.table-bordered>tfoot>tr>th:last-child,.table-responsive>.table-bordered>tfoot>tr>td:last-child{border-right:0}
+	.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>td{border-bottom:0
+	}
+	#main{
+		background:none!important;
+	}
 }
 .viagem p, .viagem i {
     color: #848182;

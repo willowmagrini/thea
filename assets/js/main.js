@@ -139,5 +139,17 @@ jQuery(document).ready(function($) {
 	  function () {
 	    $(this).children('.dropdown-menu').addClass('ativo');
 	  });
+		$(".gallery").owlCarousel({
+
+		    // Most important owl features
+		    items : 4,
+		    navigation : true,
+		    pagination : false,
+		
+		    navigationText : ["<div id='seta-esq'></div>" ,"<div id='seta-dir'></div>"],
+		
+		
+
+		})
 	
 });
