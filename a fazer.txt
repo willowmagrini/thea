@@ -1,0 +1,138 @@
+instalar wordpress local
+instalar tema ordin com nome thea
+clonar o repo 
+
+Tema
+	opcoes
+		imagem bg ##feito
+		cor principal ##feito
+	
+	header
+		instalar fonte HanziPen SC ##feito
+		baner com nome 3 col borda ##feito
+	
+	sidebar 3 col
+		menu ##feito
+		socials ##feito
+		busca 
+	
+	criar todos os customs
+		janelas ##feito
+		projetos ##feito
+		viagens ##feito
+		Meu Jardim ##feito
+	home
+		só background sem cobertura ##feito
+
+	sobre
+		1 col de margem esquerda ##feito
+		título ##feito
+		5 colunas de texto com 20px margem direita ##feito
+		2 col foto e contato em baixo ##feito
+		
+	janelas ##feito
+		1 col margem esq
+		título
+		título com descrição
+		3 fotos com titulo em baixo ocupando 2 col com meia coluna de margem direita
+		
+	projetos ##feito
+		1 col margem esq
+		título com descrição 3 col
+		lista de títulos 3 col
+		fotos dos posts 4 col margem esquerda 1/3 de coluna
+		
+	viagens ##feito
+		1 col margem esq
+		título com descrição 12 col
+		lista de posts
+			foto 1 col
+			título, data e descrição
+		
+	Meu Jardim ##feito
+		1 col margem esq	
+		título com descrição 12 col
+		fotos 1 col com 0,4 col de margem
+		
+		
+		falta: resolver problema de continuidade, colocando 		
+	Contato  ##feito
+		1 col margem esq	
+		formulario de contato
+
+
+
+	página interna
+		1 col margem esq	
+		titulo
+		foto 3 col
+		texto 4 col com 20px
+		lista de tags	
+		hr
+		paginacao de posts, anterior e próximo
+				////////////////////////////////////////
+				
+	Personalização do admin
+	resultado de busca
+		falta layout
+		
+		acertar os thumbnails
+		mudar slug dos customs
+		
+tempo:
+
+criação da lista e do repo, issues e tudo: 1:10h
+dia 03/01
+12:06 - 12:32
+instala wordpress local, coloca o thema odin e modifica screenshot e descrição.
+12:33 - 13:09 - coloca as opcoes de tema (fundo e cor) começa a mudar ozsw2 siderbar e header.
+20:16 - 21:40 - começa a front-page, coloca o sidebar com o menu e o banner
+22:38 - 23:11 - muda cor de font e faixa do footer(de acordo com user)
+
+dia 04/01
+12:38 - 13:26 - estilo do menu e tentativa de achar icones do face e insta
+15:54 - 16:42 - instagram e facebook no sidebar e no painel
+16:42 - 17:15 - form de busca (front) cor cores alteraveis.
+17:46 - 18:21 - tentando consertar banner
+19:00 - 19:59 - termina o banner comeca pagina sobre
+
+dia 05/01
+17:27 - 17:33 - salva logo
+17:53 - 18:15
+18:40 - 18:45 - acerta o logo e o fundo das paginas
+
+dia 06/01
+13:37 - 14:01 - estuda o uso do vh e vw
+14:09 - 15:46 - quase termina a sobre
+16:18 - 16:36 - comeca customs
+17:32 - 18:23 - termina customs
+18:23 - 19:43 - comeca a janelas
+19:45 - 20:03 - termina janelas menos paginacao
+20:03 - 20:20 - comeca projetos
+21:54 - 22:42 - termina projetos comeca viagens
+22:51 - 00:00 - termina viagens ja dando um tapa de css
+00:00 - 00:20 - meu jardim
+00:20 - 00:48 - sobe pro server 
+
+dia 07/01
+12:10 - 12:39 - vendo vh para soplucionar viagens melhor distribuido
+12:50 - 13:58 - formulario de contato quase terminado
+14:14 - 14:46 - teste e upload
+15:41 - 15:45 - 
+16:02 - 16:21
+16:33 - 17:10
+17:26 - 17:47 - continua na mesma tentando melhorar a aparecncia
+18:30 - 19:23
+19:58 - 20:27
+20:31 - 21:36	
+22:31 - 22:56
+00:30 - 02:23
+
+dia 08/01
+12:20 - 12:55
+
+
+dia 14/01
+22:10 - 23:08 ajustes1
+23:18 - 23:30 """"""""
+23:52 - 04:35
