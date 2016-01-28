@@ -59,7 +59,8 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 </head>
 <style>
 		
-		.nav li a, a{
+		.nav li a, a, #conteudo-filtro  a:hover{
+			transition: color 0.7s ease;
 			color:
 			<?php
 				$cor = hex2rgb($corex);
@@ -181,6 +182,11 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 			}	
 			
 		}	
+		#conteudo-filtro a {
+			color:#848182;
+			transition: color 0.7s ease;
+			
+		}
 		
 		
 </style>

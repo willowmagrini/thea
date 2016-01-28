@@ -1712,8 +1712,15 @@ article{
 
 	
 }
+
  h4{
 	font-size:1em;
+	
+}
+.janela h4{
+	margin-top:2px;
+	padding-top:0;
+	padding-left:10px;
 }
 .janela{
 	padding-bottom:20px;
@@ -1744,6 +1751,9 @@ article{
 	padding: 2vh 0; 
 
 
+}
+#descricao p{
+	font-weight:bold;
 }
 .viagem:nth-child(2){
 	

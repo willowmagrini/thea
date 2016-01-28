@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Viagens
+ * Template Name: Janelas
  *
  * 
  *
@@ -15,6 +15,7 @@ $obj = get_post_type_object( 'viagens' );
 ?>
 
 	<div id="primary"  class="col-sm-10">
+		<div id="margem"></div>
 		<div id="content" class="site-content" role="main">
 			<div class="clearfix"></div>
 
@@ -26,53 +27,59 @@ $obj = get_post_type_object( 'viagens' );
 			<div id="descricao" class="col-sm-10">
 				<p><?php echo $obj->description;?></p>
 			</div>
-			<div class="clearfix"></div>
-			<?php
-			$categories = get_terms( 'cat_viagem', array(
-			 	'orderby'    => 'count',
-			 	'hide_empty' => 1,
-			 ) );
-		if (!empty($categories)){
-			?>
-			<div class="col-sm-1"></div>
 
-			<div class="col-sm-10">
+			<div class="clearfix"></div>
+			
+				
 				<?php
-				$args_cat = array(
-					'show_option_none' => __( 'Todas Categorias','odin' ),
-					'show_count'       => 1,
-					'orderby'          => 'name',
-					'echo'             => 0,
-					'taxonomy'		   => 'cat_viagem',
-					'id'			   => 'viagens',
-					'class'            => 'seletor-categoria'
-				);
+				$categories = get_terms( 'cat_viagem', array(
+				 	'orderby'    => 'count',
+				 	'hide_empty' => 1,
+				 ) );
+			if (!empty($categories)){
 				?>
+				<div class="col-sm-1"></div>
 
+				<div class="col-sm-10">
+					<?php
+					$args_cat = array(
+						'show_option_none' => __( 'Todas Categorias','odin' ),
+						'show_count'       => 1,
+						'orderby'          => 'name',
+						'echo'             => 0,
+						'taxonomy'		   => 'cat_viagem',
+						'id'			   => 'viagens',
+						'class'            => 'seletor-categoria'
+					);
+					?>
+
+					<?php 
+					add_filter( 'wp_dropdown_cats', 'wp_dropdown_categories_attribute' );
+					function wp_dropdown_categories_attribute( $output ){
+					    return preg_replace( 
+					        '^' . preg_quote( '<select ' ) . '^', 
+					        '<select data-taxonomy="cat_viagem" ', 
+					        $output 
+					    );
+					}
+					$select  = wp_dropdown_categories( $args_cat ); 
+					?>
+
+					<?php 
+					echo $select; ?>
+
+
+				</div>
 				<?php 
-				add_filter( 'wp_dropdown_cats', 'wp_dropdown_categories_attribute' );
-				function wp_dropdown_categories_attribute( $output ){
-				    return preg_replace( 
-				        '^' . preg_quote( '<select ' ) . '^', 
-				        '<select data-taxonomy="cat_viagem" ', 
-				        $output 
-				    );
-				}
-				$select  = wp_dropdown_categories( $args_cat ); 
+			}
 				?>
 				
-				<?php 
-				echo $select; ?>
-				
-				
-			</div>
-		<?php
-		}
-		?>
 			<div class="clearfix"></div>
 			<div class="col-sm-1"></div>
+			
+			
 			<?php 
-
+			
 			$args = array(
 				'post_type' => 'viagens',
 				'posts_per_page' => 99999,
@@ -80,40 +87,41 @@ $obj = get_post_type_object( 'viagens' );
 
 
 			);
-			$viagens_query = new WP_Query( $args );
+			$janelas_query = new WP_Query( $args );
 			// The Loop
-			
-			if ( $viagens_query->have_posts() ) {
+			?>
+					
+
+						
+
+					
+
+			<?php 
+			if ( $janelas_query->have_posts() ) {
 				echo '<ul id="conteudo-filtro" class="sem-margem col-sm-10"> ';
 				$count=1;
-				while ( $viagens_query->have_posts() ) {
-					$viagens_query->the_post();
+				while ( $janelas_query->have_posts() ) {
+					$janelas_query->the_post();
 					$titu =  get_the_title();
 					$desc = get_the_content();
 				
 					?>
 					
-					<li class='viagem col-sm-12 ' id="cliente-<?php echo $post->ID;?>">
+					<li class='janela col-sm-4 ' id="cliente-<?php echo $post->ID;?>">
 						<a href="<?php the_permalink();?>">
-								<div class=" thumb_viagem">
-									<?php 
-								the_post_thumbnail('viagens');
-									?>
-								</div>
-								<div class="viagem_div">
-									<?php
-									echo '<h4>'.$titu.'</h4>';									
-									echo the_excerpt();
-									?>
-									
-								</div>
 								
-									
+									<?php 
+								the_post_thumbnail('janelas');
+									echo '<h4>'.$titu.'</h4>';
+									?>
 						</a>
 					</li>
-					<div class="clearfix"></div>
-					
 					<?php
+					if ($count % 3 == 0){
+						?>
+						<div class="clearfix"></div>
+						<?php
+					}
 				$count++;
 				}//while
 				echo '</ul>';
@@ -121,9 +129,8 @@ $obj = get_post_type_object( 'viagens' );
 				// no posts found
 			}
 			?>
-
+			
 		</div><!-- #content -->
-		
 	</div><!-- #primary -->
 
 <?php

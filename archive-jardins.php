@@ -98,16 +98,17 @@ $obj = get_post_type_object( 'jardins' );
 				
 					?>
 					
-					<li class='jardim col-sm-2 ' id="id-<?php echo $post->ID;?>">
+					<li class='janela col-sm-4 ' id="cliente-<?php echo $post->ID;?>">
 						<a href="<?php the_permalink();?>">
 								
 									<?php 
-								the_post_thumbnail('thumbnail');
+								the_post_thumbnail('janelas');
+									echo '<h4>'.$titu.'</h4>';
 									?>
 						</a>
 					</li>
 					<?php
-					if ($count % 6 == 0){
+					if ($count % 3 == 0){
 						?>
 						<div class="clearfix"></div>
 						<?php

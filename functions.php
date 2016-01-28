@@ -403,7 +403,7 @@ function prefix_enqueue_awesome() {
 
 ////////google-fonts
 function load_fonts() {
-            wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto:300');
+            wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto:300|900');
             wp_enqueue_style( 'googleFonts');
         }
     
