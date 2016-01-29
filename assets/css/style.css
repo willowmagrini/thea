@@ -961,7 +961,7 @@ tbody.collapse.in{display:table-row-group}
 .navbar-right{float:right !important;margin-right:-15px}
 .navbar-right ~ .navbar-right{margin-right:0}
 }
-.navbar-default{background-color:transparent;border:none;margin-top: 15vh;}
+.navbar-default{background-color:transparent;border:none;margin-top: 10vh;}
 .navbar-default .navbar-brand{color:#777}
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#5e5e5e;background-color:transparent}
 .navbar-default .navbar-text{color:#777}
@@ -1535,7 +1535,6 @@ p{
 
 /*sidebar*/
 #header-image img{
-	width:80%;
 	position:absolute;
 	top:0;
 	bottom:0;
@@ -1850,7 +1849,6 @@ p{
 #seta-esq{
 	width: 51px;
 	height: 56px;
-	background-image: url('../images/seta-esq.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: absolute;
@@ -1861,7 +1859,6 @@ p{
 #seta-dir{
 	width: 51px;
 	height: 56px;
-	background-image: url('../images/seta-dir.svg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: absolute;
@@ -1905,6 +1902,11 @@ p{
 	    transition: all  ease-out 0.5s;
 	
 }
+#ajax-loader{
+	position: fixed;
+	    top: 25vh;
+	    left: 47%;
+}
 #modal-conteudo a, #modal-conteudo a:hover,#modal-conteudo a:active{
 	text-decoration:none;
 }
@@ -1917,14 +1919,14 @@ p{
     position: relative;
     right: -20px;
     text-align: right;
-    font-size: 31px;	
+    font-size: 42px;	
 	color:#fff;
 }
 #modal-conteudo{
     z-index: 9999999;
     top: 50%;
     left: 50%;
-    padding: 1% 10%;
+    padding: 1% 4%;
     width: 100%;
     height: auto;
     position: fixed;
@@ -1938,7 +1940,14 @@ p{
     max-width: 900px;
 }
 #modal-conteudo img{
-	width:100%;
+    display: block;
+    margin: 0 auto;
+	max-width:100%;
+	max-height: 90vh;
+    
+}
+svg:active, svg:focus{
+	outline:none;
 }
 .owl-theme .owl-controls .owl-buttons div {
     color: #FFF;
@@ -1954,7 +1963,25 @@ p{
     filter: Alpha(Opacity=50);
     opacity: 0.5;
 }
-
+.pag-modal{
+	position:absolute;
+	top: 50%;
+    
+}
+.pag-modal.esq{
+	left:0;
+}
+.pag-modal.dir{
+	right:0;
+}
+.pag-modal svg{
+	width: 47px;
+	    height: 70px;
+	}
+#legenda{
+	text-align:center;
+	color:#fff;
+}
 @media (min-height: 580px){
 	
 	#content{

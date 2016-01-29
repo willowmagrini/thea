@@ -60,8 +60,20 @@
 	
 	//////////////////////////////foto
 	function revela_foto(){
+		$num=$_POST['num'];
+		if ($num !== "0"){
+			echo '<a class="pag-modal esq" href="#" data-dest="'.($num-1).'" >
+<svg version="1.1" id="seta-esq" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847" enable-background="new 0 0 451.846 451.847""> <path class="esq-modal" fill="#fff" d="M106.405,203.554L300.692,9.274c12.358-12.365,32.396-12.365,44.75,0c12.354,12.354,12.354,32.391,0,44.743 L173.528,225.926L345.437,397.83c12.354,12.359,12.354,32.395,0,44.748c-12.354,12.359-32.391,12.359-44.75,0L106.4,248.293 c-6.177-6.18-9.262-14.271-9.262-22.366C97.138,217.829,100.229,209.732,106.405,203.554"/></svg>			</a>';
+		}
+		
 		$end=$_POST['endereco'];
-		echo '<img src='.$end.'>';
+		echo '<img style="display:none" src='.$end.'>';
+		echo '<p style="display:none" id="legenda">'.$_POST['legenda'].'</p>';
+		if ($_POST['num'] !== $_POST['tamanho'] ){
+					echo '<a class="pag-modal dir" href="#" data-dest="'.($num+1).'">
+<svg id="seta-dir"width="451.846px" height="451.847px" viewBox="0 0 451.846 451.847" enable-background="new 0 0 451.846 451.847"><path fill="#9EBA60" d="M345.441,248.292l-194.288,194.28c-12.359,12.365-32.397,12.365-44.75,0 c-12.354-12.354-12.354-32.391,0-44.743L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748 c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284c6.177,6.18,9.262,14.271,9.262,22.366 C354.708,234.018,351.617,242.115,345.441,248.292"/></svg>						</a>';
+				}
+		
 		wp_die();
 		
 	}

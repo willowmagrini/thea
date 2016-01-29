@@ -133,7 +133,13 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 							echo "rgba(".$cor.",1)";
 						?>;*/
 		}
-		svg
+	 	.esq-modal, .dir-modal{
+		stroke:	<?php
+						echo "rgba(".$cor.",1)";
+					?>;
+				    
+	}
+		svg, #seta-esq path, #seta-dir path
 		{fill:<?php
 					echo "rgba(".$cor.",1)";
 				?>;
@@ -157,13 +163,13 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 		#faixa{
 /*			background-color:<?php echo "rgba(".$cor.",1)";?>*/
 		}
-		#social a i{
+		#social a i, #botao-fechar{
 			color:
 				<?php
 					echo "rgba(".$cor.",1)";			
 				?>
 		}
-		#social a:hover i, #paginacao, #botao-fechar{
+		#social a:hover i, #paginacao{
 			color: 	<?php
 						echo "rgba(".$cor.",0.3)";
 					?>;
@@ -175,6 +181,7 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );?>
 		}
 		#main{
 			background-image:url('<?php echo $imagem[0]; ?>');
+			background-size:cover;
 		}
 		@media screen and (max-width: 767px){
 			#primary {

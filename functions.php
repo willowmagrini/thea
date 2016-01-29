@@ -650,8 +650,9 @@ function remove_admin_bar_links() {
 	$wp_admin_bar->remove_menu('search');           // If you use w3 total cache remove the performance link
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
-add_image_size( 'janelas', '400', '240', true );
+add_image_size( 'janelas', '270', '170', true );
 add_image_size( 'viagens', '150', '150', true );
+add_image_size( 'modal', '150', '150', true );
 
 
 /////////////////////////////////////////////////////////////
@@ -745,12 +746,13 @@ add_image_size( 'viagens', '150', '150', true );
 		$itemwidth = $columns > 0 ? floor( 100 / $columns ) : 100;
 		$float = is_rtl() ? 'right' : 'left';
 		$selector = "gallery-{$instance}";
+		$tamanho=count($attachments);
 
 		// Filter gallery CSS
 		$output = apply_filters( 'gallery_style', "
 			
 			<!-- see gallery_shortcode() in wp-includes/media.php -->
-			<div id='$selector' class='gallery galleryid-{$id}'>"
+			<div data-tamanho=".$tamanho." id='$selector' class='gallery galleryid-{$id}'>"
 		);
 
 		// Iterate through the attachments in this gallery instance
@@ -759,9 +761,10 @@ add_image_size( 'viagens', '150', '150', true );
 
 			// Attachment link
 			$link = isset( $attr['link'] ) && 'file' == $attr['link'] ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false ); 
-
+			$link = str_replace('<a','<a data-legenda="'.$attachment->post_excerpt.'" data-num="'.$i.'"',$link);
+		    
 			// Start itemtag
-			$output .= "<{$itemtag} class='gallery-item'>";
+			$output .= "<{$itemtag} class='gallery-item' >";
 
 			// icontag
 			$output .= "
@@ -769,15 +772,6 @@ add_image_size( 'viagens', '150', '150', true );
 				$link
 			</{$icontag}>";
 
-			if ( $captiontag && trim( $attachment->post_excerpt ) ) {
-
-				// captiontag
-				$output .= "
-				<{$captiontag} class='gallery-caption'>
-					" . wptexturize($attachment->post_excerpt) . "
-				</{$captiontag}>";
-
-			}
 
 			// End itemtag
 			$output .= "</{$itemtag}>";
@@ -798,3 +792,31 @@ add_image_size( 'viagens', '150', '150', true );
 
 	// Apply filter to default gallery shortcode
 	add_filter( 'post_gallery', 'my_post_gallery', 10, 2 );
+	
+	/**
+	 * Disable requests to wp.org repository for this theme.
+	 *
+	 * @since 1.0.0
+	 */
+	function prefix_disable_wporg_request( $r, $url ) {
+
+		// If it's not a theme update request, bail.
+		if ( 0 !== strpos( $url, 'https://api.wordpress.org/themes/update-check/1.1/' ) ) {
+				return $r;
+			}
+
+			// Decode the JSON response
+			$themes = json_decode( $r['body']['themes'] );
+
+			// Remove the active parent and child themes from the check
+			$parent = get_option( 'template' );
+			$child = get_option( 'stylesheet' );
+			unset( $themes->themes->$parent );
+			unset( $themes->themes->$child );
+
+			// Encode the updated JSON response
+			$r['body']['themes'] = json_encode( $themes );
+
+			return $r;
+	}
+	add_filter( 'http_request_args', array( $this, 'prefix_disable_wporg_request' ), 5, 2 );

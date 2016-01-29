@@ -20,7 +20,7 @@ $obj = get_post_type_object( 'projetos' );
 			<div class="clearfix"></div>
 
 			<h1 id="titulo-cpt" class="entry-header">
-				<?php echo $obj->name;?>
+				<?php echo $obj->name." - ".get_queried_object()->name;?>
 			</h1>
 			<div class="col-sm-1"></div>
 
@@ -30,36 +30,7 @@ $obj = get_post_type_object( 'projetos' );
 			<div class="clearfix"></div>
 			<div class="col-sm-1"></div>
 
-			<div class="col-sm-10">
-				<?php
-				$args_cat = array(
-					'show_option_none' => __( 'Todas Categorias','odin' ),
-					'show_count'       => 1,
-					'orderby'          => 'name',
-					'echo'             => 0,
-					'taxonomy'		   => 'cat_projeto',
-					'id'			   => 'projetos',
-					'class'            => 'seletor-categoria'
-				);
-				?>
-
-				<?php 
-				add_filter( 'wp_dropdown_cats', 'wp_dropdown_categories_attribute' );
-				function wp_dropdown_categories_attribute( $output ){
-				    return preg_replace( 
-				        '^' . preg_quote( '<select ' ) . '^', 
-				        '<select data-taxonomy="cat_projeto" ', 
-				        $output 
-				    );
-				}
-				$select  = wp_dropdown_categories( $args_cat ); 
-				?>
-				
-				<?php 
-				echo $select; ?>
-				
-				
-			</div>
+			
 			<div class="clearfix"></div>
 			<div class="col-sm-1"></div>
 			<?php 
@@ -120,8 +91,3 @@ $obj = get_post_type_object( 'projetos' );
 <?php
 get_footer();
 ?>
-<script>
-	document.getElementById('projetos').value='<?php
-	echo get_queried_object()->term_id;
-	?>'
-</script>

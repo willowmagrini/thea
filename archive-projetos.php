@@ -31,48 +31,6 @@ $obj = get_post_type_object( 'projetos' );
 			<div class="clearfix"></div>
 			
 				
-				<?php
-				$categories = get_terms( 'cat_projeto', array(
-				 	'orderby'    => 'count',
-				 	'hide_empty' => 1,
-				 ) );
-			if (!empty($categories)){
-				?>
-				<div class="col-sm-1"></div>
-
-				<div class="col-sm-10">
-					<?php
-					$args_cat = array(
-						'show_option_none' => __( 'Todas Categorias','odin' ),
-						'show_count'       => 1,
-						'orderby'          => 'name',
-						'echo'             => 0,
-						'taxonomy'		   => 'cat_projeto',
-						'id'			   => 'projetos',
-						'class'            => 'seletor-categoria'
-					);
-					?>
-
-					<?php 
-					add_filter( 'wp_dropdown_cats', 'wp_dropdown_categories_attribute' );
-					function wp_dropdown_categories_attribute( $output ){
-					    return preg_replace( 
-					        '^' . preg_quote( '<select ' ) . '^', 
-					        '<select data-taxonomy="cat_projeto" ', 
-					        $output 
-					    );
-					}
-					$select  = wp_dropdown_categories( $args_cat ); 
-					?>
-
-					<?php 
-					echo $select; ?>
-
-
-				</div>
-				<?php 
-			}
-				?>
 				
 			<div class="clearfix"></div>
 			<div class="col-sm-1"></div>

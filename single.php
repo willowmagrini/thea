@@ -36,13 +36,13 @@ $imagem = wp_get_attachment_image_src( $imagem, 'full' );
 			?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
-	<div id="fundo-modal">	</div>
+	<div id="fundo-modal">	<img id="ajax-loader" style="display:none" src="<?php echo get_template_directory_uri(); ?>/assets/images/ajax-loader.gif">
+	</div>
 	<div id="modal-conteudo">
-		
 		<a href="#">
-			<div id="botao-fechar">x</div>
+			<div style="display:none" id="botao-fechar">x</div>
 		</a>
-		<div class="animated fadeIn" id="html">
+		<div style="display:none;" class="animated fadeIn" id="html">
 		</div>		
 	</div>
 

@@ -20,17 +20,46 @@ $obj = get_post_type_object( 'janelas' );
 			<div class="clearfix"></div>
 
 			<h1 id="titulo-cpt" class="entry-header">
-				<?php echo $obj->name." - ".get_queried_object()->name;?>
+				<?php echo $obj->name;?>
 			</h1>
 			<div class="col-sm-1"></div>
 
 			<div id="descricao" class="col-sm-10">
-				<p><?php echo $obj->description;?></p>
+				<p><?php echo get_queried_object()->slug;?></p>
 			</div>
 			<div class="clearfix"></div>
 			<div class="col-sm-1"></div>
 
-			
+			<div class="col-sm-10">
+				<?php
+				$args_cat = array(
+					'show_option_none' => __( 'Todas Categorias','odin' ),
+					'show_count'       => 1,
+					'orderby'          => 'name',
+					'echo'             => 0,
+					'taxonomy'		   => 'cat_janela',
+					'id'			   => 'janelas',
+					'class'            => 'seletor-categoria'
+				);
+				?>
+
+				<?php 
+				add_filter( 'wp_dropdown_cats', 'wp_dropdown_categories_attribute' );
+				function wp_dropdown_categories_attribute( $output ){
+				    return preg_replace( 
+				        '^' . preg_quote( '<select ' ) . '^', 
+				        '<select data-taxonomy="cat_janela" ', 
+				        $output 
+				    );
+				}
+				$select  = wp_dropdown_categories( $args_cat ); 
+				?>
+				
+				<?php 
+				echo $select; ?>
+				
+				
+			</div>
 			<div class="clearfix"></div>
 			<div class="col-sm-1"></div>
 			<?php 
@@ -91,3 +120,8 @@ $obj = get_post_type_object( 'janelas' );
 <?php
 get_footer();
 ?>
+<script>
+	document.getElementById('janelas').value='<?php
+	echo get_queried_object()->term_id;
+	?>'
+</script>
